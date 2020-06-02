@@ -110,15 +110,13 @@ export default class Board {
     static showRestart() {
         const restart = document.getElementById('restart');
         restart.classList.remove('hide');
-        restart.classList.add('show');
 
         const restartBtn = document.getElementById('restart-btn');
-        restartBtn.onlick = () => Board.reset();
+        restartBtn.onclick = () => Board.reset();
     }
 
     static reset() {
         const restart = document.getElementById('restart');
-        restart.classList.remove('show');
         restart.classList.add('hide');
 
         for (let square of Board.allSquares) {
