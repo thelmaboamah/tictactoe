@@ -8,10 +8,11 @@ export default class Square {
         this.isOccupied = false;
         this.value = null; // X or O
 
-        this.element.onclick = () => this.select(this.isOccupied);
+        this.element.onclick = (e) => this.select(e, this.isOccupied);
     }
 
-    select(isOccupied) {
+    select(e, isOccupied) {
+        e.preventDefault();
         if (!isOccupied) {
            this.fill();
            this.isOccupied = true;
