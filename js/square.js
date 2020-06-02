@@ -1,4 +1,5 @@
 import Players from './players.js';
+import Board from './board.js';
 
 export default class Square {
     constructor(position, element) {
