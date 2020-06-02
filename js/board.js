@@ -1,5 +1,5 @@
-import Players from './players';
-import Square from './square';
+import Players from './players.js';
+import Square from './square.js';
 
 export default class Board {
     static allSquares = [];

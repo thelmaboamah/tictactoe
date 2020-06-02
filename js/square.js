@@ -1,4 +1,4 @@
-import Players from './players';
+import Players from './players.js';
 
 export default class Square {
     constructor(position, element) {
