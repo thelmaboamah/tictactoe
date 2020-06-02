@@ -18,6 +18,7 @@ export default class Square {
 
            if (Board.checkForWinner()) {
                Board.disable();
+               Board.showRestart();
            } else {
                Players.toggleActivePlayer();
            }
@@ -29,5 +30,9 @@ export default class Square {
         this.element.innerText = player.value;
         this.value = player.value;
         Board.numOfSquaresFilled++;
+    }
+
+    clear() {
+        this.element.innerText = '';
     }
 }

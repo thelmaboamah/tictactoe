@@ -106,5 +106,26 @@ export default class Board {
         player.wins++;
         player.element.lastElementChild.innerText = player.wins; //rigid, better if I use the className but OK for now
     }
+
+    static showRestart() {
+        const restart = document.getElementById('restart');
+        restart.classList.remove('hide');
+        restart.classList.add('show');
+
+        const restartBtn = document.getElementById('restart-btn');
+        restartBtn.onlick = () => Board.reset();
+    }
+
+    static reset() {
+        const restart = document.getElementById('restart');
+        restart.classList.remove('show');
+        restart.classList.add('hide');
+
+        for (let square of Board.allSquares) {
+            square.clear();
+        }
+
+        Board.init();
+    }
     
 }
