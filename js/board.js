@@ -4,6 +4,7 @@ import Square from './square.js';
 export default class Board {
     static allSquares = [];
     static numOfSquaresFilled = 0;
+    static winner = null;
 
     static init() {
         let squares = document.getElementsByClassName('square');
@@ -18,8 +19,15 @@ export default class Board {
     static checkForWinner() {
         if (Board.numOfSquaresFilled < 5) { //no need to check for winner until there have been 5 or more plays
             return false;
-        } else {
-            return Board.check(Players.playerX) || Board.check(Players.playerO);
+        } else if (Board.check(Players.playerX)) {
+            Board.winner = Players.playerX.value;
+            return true;
+        } else if (Board.check(Players.playerO)) {
+            Board.winner = Players.playerO.value;
+            return true;
+        } else if (Board.numOfSquaresFilled === 9) {
+            Board.winner = 'draw';
+            return true;
         }
     }
 
@@ -117,6 +125,14 @@ export default class Board {
 
     static showRestart() {
         const restart = document.getElementById('restart');
+        const msg = document.getElementById('restart-msg');
+
+        if (Board.winner === 'draw') {
+            msg.innerText = "It's a draw";
+        } else {
+            msg.innerText = `The winner is ${Board.winner}`;
+        }
+
         restart.classList.remove('hide');
 
         const restartBtn = document.getElementById('restart-btn');
@@ -136,4 +152,6 @@ export default class Board {
         Board.init();
     }
     
+    //TODO - handle case of a draw
+
 }
