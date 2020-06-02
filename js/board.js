@@ -129,6 +129,7 @@ export default class Board {
 
         for (let square of Board.allSquares) {
             square.clear();
+            square.element.classList.remove('highlight');
         }
         Board.allSquares = [];
         Board.numOfSquaresFilled = 0;
