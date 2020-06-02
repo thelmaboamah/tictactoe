@@ -130,7 +130,8 @@ export default class Board {
         for (let square of Board.allSquares) {
             square.clear();
         }
-
+        Board.allSquares = [];
+        Board.numOfSquaresFilled = 0;
         Board.init();
     }
     
