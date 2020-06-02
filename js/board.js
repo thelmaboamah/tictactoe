@@ -24,7 +24,7 @@ export default class Board {
     }
 
     static check(player) {
-        const positions = [];
+        let positions = [];
 
         for (let square of Board.allSquares) { 
             if (square.value === player.value) {
@@ -48,48 +48,56 @@ export default class Board {
             Board.allSquares[1].element.classList.add('highlight');
             Board.allSquares[2].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else if (acrossMiddle) {
             Board.allSquares[3].element.classList.add('highlight');
             Board.allSquares[4].element.classList.add('highlight');
             Board.allSquares[5].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else if (acrossBottom) {
             Board.allSquares[6].element.classList.add('highlight');
             Board.allSquares[7].element.classList.add('highlight');
             Board.allSquares[8].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else if (downLeft) {
             Board.allSquares[0].element.classList.add('highlight');
             Board.allSquares[3].element.classList.add('highlight');
             Board.allSquares[6].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else if (downMiddle) {
             Board.allSquares[1].element.classList.add('highlight');
             Board.allSquares[4].element.classList.add('highlight');
             Board.allSquares[7].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else if (downRight) {
             Board.allSquares[2].element.classList.add('highlight');
             Board.allSquares[5].element.classList.add('highlight');
             Board.allSquares[8].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else if (diagonalFromLeft) {
             Board.allSquares[0].element.classList.add('highlight');
             Board.allSquares[4].element.classList.add('highlight');
             Board.allSquares[8].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else if (diagonalFromRight) {
             Board.allSquares[2].element.classList.add('highlight');
             Board.allSquares[4].element.classList.add('highlight');
             Board.allSquares[6].element.classList.add('highlight');
             Board.updateWins(player);
+            positions = [];
             return true;
         } else {
             return false;
