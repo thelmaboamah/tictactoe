@@ -25,7 +25,7 @@ export default class Board {
         } else if (Board.check(Players.playerO)) {
             Board.winner = Players.playerO.value;
             return true;
-        } else if (Board.numOfSquaresFilled === 9) {
+        } else if (Board.numOfSquaresFilled === 9) { //if there's no winner by the time all 9 spots are fill, then it's a draw
             Board.winner = 'draw';
             return true;
         }
@@ -151,7 +151,4 @@ export default class Board {
         Board.numOfSquaresFilled = 0;
         Board.init();
     }
-    
-    //TODO - handle case of a draw
-
 }

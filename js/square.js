@@ -8,12 +8,7 @@ export default class Square {
         this.isOccupied = false;
         this.value = null; // X or O
 
-        // handle iOS ignoring click on div
-        const ua = navigator.userAgent
-        const event = ua.match(/iPad|iPhone/i) ? 'touchstart' : 'click';
-        this.element.addEventListener(event, () => {
-            this.select(this.isOccupied);
-        }, false);
+        this.element.onclick = () => this.select(this.isOccupied);
     }
 
     select(isOccupied) {
