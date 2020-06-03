@@ -51,6 +51,7 @@ header {
 .square {
     background-color: teal;
     color: white;
+    cursor: pointer;
     font-size: 120px;
     height: 200px;
     line-height: 200px;
