@@ -8,11 +8,17 @@ export default class Square {
         this.isOccupied = false;
         this.value = null; // X or O
 
-        this.element.onclick = (e) => this.select(e, this.isOccupied);
+        // handle iOS ignoring click on div
+        const ua = navigator.userAgent
+        const iOS = (ua.match(/iPad/i) || ua.match(/iPhone/));
+        if (iOS) {
+            this.element.ontouchstart = () => this.select(this.isOccupied);
+        } else {
+            this.element.onclick = () => this.select(this.isOccupied);
+        }
     }
 
-    select(e, isOccupied) {
-        e.preventDefault();
+    select(isOccupied) {
         if (!isOccupied) {
            this.fill();
            this.isOccupied = true;
