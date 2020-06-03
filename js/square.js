@@ -10,7 +10,7 @@ export default class Square {
 
         // handle iOS ignoring click on div
         const ua = navigator.userAgent
-        const iOS = (ua.match(/iPad/i) || ua.match(/iPhone/));
+        const iOS = !!(UA.match(/iPad|iPhone/i));
         if (iOS) {
             this.element.ontouchstart = () => this.select(this.isOccupied);
         } else {
