@@ -1,7 +1,7 @@
 # Tic Tac Toe
 A vanilla JS Tic Tac Toe game
 
-## Requirement
+## Requirements
 You'll need to have [Node.js](https://nodejs.org/en/download/) and an npm version above 5.2.0 installed.
 
 ## Run
