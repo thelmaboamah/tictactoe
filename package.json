@@ -1,0 +1,19 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx http-server ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thelmaboamah/tictactoe.git"
+  },
+  "author": "Thelma Boamah",
+  "bugs": {
+    "url": "https://github.com/thelmaboamah/tictactoe/issues"
+  },
+  "homepage": "https://github.com/thelmaboamah/tictactoe#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
