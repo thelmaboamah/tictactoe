@@ -3,7 +3,7 @@ import Board from './board.js';
 
 export default class Square {
     constructor(position, element) {
-        this.position = position; // value between 1 and 9 inclusive
+        this.position = position; // value between 0 and 8 inclusive
         this.element = element; // DOM element
         this.isOccupied = false;
         this.value = null; // X or O
