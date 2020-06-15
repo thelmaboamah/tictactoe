@@ -8,7 +8,7 @@ export default class Board {
 
     static init() {
         let squares = document.getElementsByClassName('square');
-        let position = 1;
+        let position = 0;
         for(let square of squares) {
             let s = new Square(position, square);
             Board.allSquares.push(s);
@@ -40,16 +40,16 @@ export default class Board {
             }
         } 
 
-        let acrossTop = (positions.includes(1) && positions.includes(2) && positions.includes(3));
-        let acrossMiddle = (positions.includes(4) && positions.includes(5) && positions.includes(6));
-        let acrossBottom = positions.includes(7) && positions.includes(8) && positions.includes(9);
+        let acrossTop = (positions.includes(0) && positions.includes(1) && positions.includes(2));
+        let acrossMiddle = (positions.includes(3) && positions.includes(4) && positions.includes(5));
+        let acrossBottom = positions.includes(6) && positions.includes(7) && positions.includes(8);
 
-        const downLeft = (positions.includes(1) && positions.includes(4) && positions.includes(7));
-        const downMiddle = (positions.includes(2) && positions.includes(5) && positions.includes(8));
-        const downRight = (positions.includes(3) && positions.includes(6) && positions.includes(9));
+        const downLeft = (positions.includes(0) && positions.includes(3) && positions.includes(6));
+        const downMiddle = (positions.includes(1) && positions.includes(4) && positions.includes(7));
+        const downRight = (positions.includes(2) && positions.includes(5) && positions.includes(8));
 
-        const diagonalFromLeft = (positions.includes(1) && positions.includes(5) && positions.includes(9));
-        const diagonalFromRight = (positions.includes(3) && positions.includes(5) && positions.includes(7));
+        const diagonalFromLeft = (positions.includes(0) && positions.includes(4) && positions.includes(8));
+        const diagonalFromRight = (positions.includes(2) && positions.includes(4) && positions.includes(6));
 
         if (acrossTop) {
             Board.allSquares[0].element.classList.add('highlight');
